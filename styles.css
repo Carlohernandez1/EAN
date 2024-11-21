@@ -1,0 +1,427 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #002449;
+}
+
+/* Barra superior */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.iconos {
+    display: flex;
+    gap: 10px;
+}
+
+.icono-boton {
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #0077b6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.icono-boton:hover {
+    background-color: #e6f2ff;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.buscador input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buscador button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Encabezado principal */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, white, #0077b6 60%, #023e8a);
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo-imagen {
+    max-height: 50px;
+}
+
+.navegacion {
+    display: flex;
+    gap: 20px;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    gap: 10px;
+}
+
+.boton, .boton-transacciones {
+    background-color: white;
+    color: #0077b6;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-transacciones {
+    background-color: #0077b6;
+    color: white;
+}
+
+/* Secciones */
+section {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.productos-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.columna {
+    flex: 1;
+    text-align: center;
+}
+
+.producto-imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Separador */
+.separador {
+    border: none;
+    border-top: 2px dashed #002449;
+    margin: 20px 0;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+}
+/* Modo oscuro */
+.modo-oscuro {
+    background-color: #121212; /* Fondo oscuro */
+    color: #f4f4f4; /* Texto claro */
+}
+
+.modo-oscuro a {
+    color: #1e90ff; /* Enlaces en modo oscuro */
+}
+
+.modo-oscuro .barra-superior {
+    background-color: #1e1e1e; /* Fondo de la barra superior */
+    border-bottom: 1px solid #333; /* Línea separadora */
+}
+
+.modo-oscuro .encabezado {
+    background: linear-gradient(90deg, #1e1e1e, #333333); /* Degradado más oscuro */
+}
+
+.modo-oscuro .boton,
+.modo-oscuro .boton-transacciones {
+    background-color: #333; /* Botones oscuros */
+    color: white;
+    border: 1px solid #555;
+}
+
+.modo-oscuro .boton:hover,
+.modo-oscuro .boton-transacciones:hover {
+    background-color: #444;
+}
+
+
+
+
+
+
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    max-width: 1000px; /* Ancho total del carrusel */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4; /* Fondo por si las imágenes no llenan completamente */
+}
+
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carrusel-imagen {
+    min-width: 100%;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    max-height: 500px; /* Establece un límite de altura */
+    object-fit: contain; /* Evita que las imágenes se corten */
+    display: none; /* Oculta todas las imágenes por defecto */
+}
+
+.carrusel-imagen.active {
+    display: block; /* Solo la imagen activa será visible */
+}
+
+.carrusel-controles {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carrusel-boton {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.carrusel-boton:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo para los títulos de las secciones */
+h2, h3 {
+    text-align: center !important;
+    color: #002449 !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Sección de canales de comunicación */
+#comunicacion {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#comunicacion h2 {
+    text-align: center;
+    color: #002449 !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#comunicacion p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #002449;
+    margin-bottom: 15px;
+}
+
+#comunicacion ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#comunicacion ul li {
+    margin-bottom: 10px;
+    color: #002449;
+    font-size: 16px;
+}
+
+.imagen-canales {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.imagen-canales img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Redes Sociales */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.marca-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-redes {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+.marca-greenfit {
+    font-size: 24px;
+    font-weight: bold;
+    color: #002449;
+    text-transform: uppercase;
+}
+
+.iconos-redes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icono-red img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Íconos redondeados */
+    background-color: #f4f4f4; /* Fondo claro */
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icono-red img:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+
+
+
+
+/* Sección de Estrategias de Distribución */
+#estrategias-distribucion {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+#estrategias-distribucion h2 {
+    text-align: center;
+    color: #002449;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Subtítulos */
+#estrategias-distribucion h3 {
+    color: #0077b6;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Párrafos */
+#estrategias-distribucion p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #002449;
+    margin-bottom: 15px;
+}
+
+/* Contenido en columnas */
+.estrategias-contenido {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por fila */
+    gap: 20px;
+}
+
+/* Imágenes en las columnas */
+.imagen-columna {
+    width: 60%; /* Ajusta las imágenes al ancho de la columna */
+    max-width: 850px; /* Define un tamaño máximo */
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Separador */
+.separador {
+    border: none;
+    border-top: 2px dashed #002449;
+    margin: 30px 0;
+}
+
+
+.navegacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+}
+
+.navegacion a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ffcc00;
+}
